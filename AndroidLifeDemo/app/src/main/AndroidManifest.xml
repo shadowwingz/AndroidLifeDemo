@@ -16,7 +16,6 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
         <activity android:name=".binderdemo.BookManagerActivity">
         </activity>
 
@@ -24,6 +23,9 @@
             android:name=".binderdemo.BookManagerService"
             android:process=":remote">
         </service>
+
+        <activity android:name=".layoutinflaterdemo.LayoutInflaterActivity">
+        </activity>
     </application>
 
 </manifest>

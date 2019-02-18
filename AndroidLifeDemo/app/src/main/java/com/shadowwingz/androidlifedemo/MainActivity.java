@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.shadowwingz.androidlifedemo.binderdemo.BookManagerActivity;
+import com.shadowwingz.androidlifedemo.layoutinflaterdemo.LayoutInflaterActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,6 +19,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, BookManagerActivity.class));
+            }
+        });
+
+        findViewById(R.id.btn_layoutinflater_demo).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, LayoutInflaterActivity.class));
             }
         });
     }
