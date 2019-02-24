@@ -1,7 +1,7 @@
 package com.shadowwingz.androidlifedemo.layoutinflaterdemo;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +18,9 @@ public class LayoutInflaterActivity extends AppCompatActivity {
         LayoutInflater inflater = LayoutInflater.from(this);
 //        inflater.inflate(R.layout.button_layout, mainLayout);
 //        inflater.inflate(R.layout.button_layout, mainLayout, true);
-        View view = inflater.inflate(R.layout.button_layout, mainLayout, false);
+//        View view = inflater.inflate(R.layout.button_layout, mainLayout, false);
+//        mainLayout.addView(view);
+        View view = inflater.inflate(R.layout.button_layout, null);
         mainLayout.addView(view);
     }
 }
