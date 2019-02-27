@@ -26,6 +26,8 @@
 
         <activity android:name=".layoutinflaterdemo.LayoutInflaterActivity">
         </activity>
+        <activity android:name=".layoutparamsdemo.LayoutParamsActivity">
+        </activity>
     </application>
 
 </manifest>
