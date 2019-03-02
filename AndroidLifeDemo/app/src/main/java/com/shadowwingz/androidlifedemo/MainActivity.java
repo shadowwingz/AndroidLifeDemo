@@ -8,6 +8,7 @@ import android.view.View;
 import com.shadowwingz.androidlifedemo.binderdemo.BookManagerActivity;
 import com.shadowwingz.androidlifedemo.layoutinflaterdemo.LayoutInflaterActivity;
 import com.shadowwingz.androidlifedemo.layoutparamsdemo.LayoutParamsActivity;
+import com.shadowwingz.androidlifedemo.setcontentviewdemo.EmptyActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,6 +35,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, LayoutParamsActivity.class));
+            }
+        });
+
+        findViewById(R.id.btn_setcontentview_demo).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, EmptyActivity.class));
             }
         });
     }

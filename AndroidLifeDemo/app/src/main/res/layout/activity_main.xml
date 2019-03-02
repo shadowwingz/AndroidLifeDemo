@@ -32,6 +32,13 @@
             android:layout_height="wrap_content"
             android:text="LayoutParams Demo"
             android:textAllCaps="false"/>
+
+        <Button
+            android:id="@+id/btn_setcontentview_demo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="setContentView Demo"
+            android:textAllCaps="false"/>
     </LinearLayout>
 
 </ScrollView>

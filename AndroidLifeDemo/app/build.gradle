@@ -27,5 +27,4 @@ dependencies {
     compile deps.android.support.appcompat
     compile deps.android.support.constraint
     testCompile deps.junit
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
 }
