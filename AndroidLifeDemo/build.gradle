@@ -45,3 +45,44 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+// 演示 Task 用法
+
+// 简单的定义一个 task，这个 task 只打印一句话
+// 通过这种方式定义的 task，括号内部的代码会在配置阶段执行，
+// 也就是 gradle clean 和 gradle build
+task myTask {
+    println "config myTask"
+}
+
+// 在 myTask 执行之后，首先执行这个 task
+myTask.doLast {
+    println "after execute myTask"
+}
+
+// 在 myTask 执行之后，其它的 task 执行之后，最后执行这个 task
+myTask.doFirst {
+    println "before execute myTask"
+}
+
+// 继承 DefaultTask，可以定义自己的方法
+class TestTask extends DefaultTask {
+    String message = 'This is TestTask'
+
+    // @TaskAction 表示该 task 要执行的动作，本例中只打印一句话，
+    // 在调用该 task 时，hello 方法将被执行
+    @TaskAction
+    def hello() {
+        println "Hello world. $message"
+    }
+}
+
+// 使用 gradle hello 来执行这个 task，表示执行 TestTask 的 hello 方法
+// 打印：Hello world. This is TestTask
+task hello(type: TestTask)
+
+// 使用 gradle hello1 来执行这个 task，表示执行 TestTask 的 hello 方法，并给 TestTask 的 message 字段赋值。
+// 打印：Hello world. I am an android developer
+task hello1(type: TestTask) {
+    message = 'I am an android developer'
+}
