@@ -1,8 +1,9 @@
 package com.shadowwingz.androidlifedemo;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.SystemClock;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.shadowwingz.androidlifedemo.binderdemo.BookManagerActivity;
@@ -44,5 +45,34 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, EmptyActivity.class));
             }
         });
+
+        findViewById(R.id.btn_anr_demo).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 第一次 anr 情况
+                testANR1();
+            }
+        });
+
+        // 第二种情况
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                testANR2();
+//            }
+//        }).start();
+//        SystemClock.sleep(5000);
+//        initView();
+    }
+
+    private void testANR1() {
+        SystemClock.sleep(30 * 1000);
+    }
+
+    private synchronized void testANR2() {
+        SystemClock.sleep(30000 * 1000);
+    }
+
+    private synchronized void initView() {
     }
 }

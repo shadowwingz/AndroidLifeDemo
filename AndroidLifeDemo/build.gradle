@@ -12,7 +12,7 @@ buildscript {
     ]
 
     ext.deps = [
-            android: [
+            android : [
                     support: [
                             'appcompat' : "com.android.support:appcompat-v7:${versions.supportLibrary}",
                             'constraint': 'com.android.support.constraint:constraint-layout:1.0.2',
@@ -22,7 +22,7 @@ buildscript {
                             ]
                     ]
             ],
-            junit  : 'junit:junit:4.12',
+            junit   : 'junit:junit:4.12',
     ]
 
     repositories {
