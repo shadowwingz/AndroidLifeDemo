@@ -20,7 +20,21 @@ public class MemoryLeakActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_memory_leak);
+//        handlerMemoryLeak();
+        singletonMemoryLeak();
+//        singletonNoMemoryLeak();
+    }
+
+    private void handlerMemoryLeak() {
         // 延时 3 分钟的消息
         mHandler.sendEmptyMessageDelayed(0, 3 * 60 * 1000);
+    }
+
+    private void singletonMemoryLeak() {
+        SingletonMemoryLeak.getInstance(this);
+    }
+
+    private void singletonNoMemoryLeak() {
+        SingletonNoMemoryLeak.getInstance(this);
     }
 }

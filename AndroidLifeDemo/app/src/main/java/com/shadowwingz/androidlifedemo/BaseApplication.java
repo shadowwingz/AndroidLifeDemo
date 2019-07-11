@@ -5,6 +5,7 @@ import android.app.Application;
 import android.os.Bundle;
 
 import com.shadowwingz.androidlifedemo.memoryleakdemo.LeakThread;
+import com.squareup.leakcanary.LeakCanary;
 
 import java.lang.ref.WeakReference;
 
@@ -20,7 +21,8 @@ public class BaseApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        leakThread.start();
+        initLeakCanary();
+//        leakThread.start();
         registerActivityLifecycleCallbacks(new ActivityLifecycleCallbacks() {
             @Override
             public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
@@ -57,6 +59,15 @@ public class BaseApplication extends Application {
                 weakReference = new WeakReference<>(activity);
             }
         });
+    }
+
+    private void initLeakCanary() {
+        if (LeakCanary.isInAnalyzerProcess(this)) {//1
+            // This process is dedicated to LeakCanary for heap analysis.
+            // You should not init your app in this process.
+            return;
+        }
+        LeakCanary.install(this);
     }
 
     public static void checkActivityRef() {
