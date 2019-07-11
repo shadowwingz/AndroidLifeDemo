@@ -36,7 +36,7 @@ public class LayoutParamsActivity extends AppCompatActivity {
         parent.addView(textView);
 
         // 修改 LayoutParams，长度修改为 200 像素
-//        textView.setLayoutParams(new LinearLayout.LayoutParams(200, ViewGroup.LayoutParams.MATCH_PARENT));
-        textView.setLayoutParams(new RelativeLayout.LayoutParams(200, ViewGroup.LayoutParams.MATCH_PARENT));
+        textView.setLayoutParams(new LinearLayout.LayoutParams(200, ViewGroup.LayoutParams.MATCH_PARENT));
+//        textView.setLayoutParams(new RelativeLayout.LayoutParams(200, ViewGroup.LayoutParams.MATCH_PARENT));
     }
 }

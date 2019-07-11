@@ -3,6 +3,7 @@
           package="com.shadowwingz.androidlifedemo">
 
     <application
+        android:name=".BaseApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -29,6 +30,8 @@
         <activity android:name=".layoutparamsdemo.LayoutParamsActivity">
         </activity>
         <activity android:name=".setcontentviewdemo.EmptyActivity">
+        </activity>
+        <activity android:name=".memoryleakdemo.MemoryLeakActivity">
         </activity>
     </application>
 
