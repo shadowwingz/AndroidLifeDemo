@@ -1,0 +1,32 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion versions.compileSdk
+    buildToolsVersion versions.androidTools
+    defaultConfig {
+        applicationId "com.shadowwingz.androidlifedemo"
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner deps.android.support.test.runner
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile(deps.android.support.test.espresso, {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile deps.android.support.appcompat
+    compile deps.android.support.constraint
+    debugCompile deps.leakcanary
+    testCompile deps.junit
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+}

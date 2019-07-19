@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.shadowwingz.androidlifedemo">
+
+    <application
+        android:name=".BaseApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".binderdemo.BookManagerActivity">
+        </activity>
+
+        <service
+            android:name=".binderdemo.BookManagerService"
+            android:process=":remote">
+        </service>
+
+        <activity android:name=".layoutinflaterdemo.LayoutInflaterActivity">
+        </activity>
+        <activity android:name=".layoutparamsdemo.LayoutParamsActivity">
+        </activity>
+        <activity android:name=".setcontentviewdemo.EmptyActivity">
+        </activity>
+        <activity android:name=".memoryleakdemo.MemoryLeakActivity">
+        </activity>
+
+        <service
+            android:name=".anrdemo.ForegroundService"
+            android:enabled="true"
+            android:exported="true">
+        </service>
+
+        <activity android:name=".handlerdemo.HandlerActivity">
+        </activity>
+    </application>
+
+</manifest>
