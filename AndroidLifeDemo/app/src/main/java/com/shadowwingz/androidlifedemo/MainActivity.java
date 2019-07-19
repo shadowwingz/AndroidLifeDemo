@@ -5,13 +5,17 @@ import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 
 import com.shadowwingz.androidlifedemo.binderdemo.BookManagerActivity;
+import com.shadowwingz.androidlifedemo.handlerdemo.HandlerActivity;
 import com.shadowwingz.androidlifedemo.layoutinflaterdemo.LayoutInflaterActivity;
 import com.shadowwingz.androidlifedemo.layoutparamsdemo.LayoutParamsActivity;
 import com.shadowwingz.androidlifedemo.memoryleakdemo.MemoryLeakActivity;
 
 public class MainActivity extends AppCompatActivity {
+
+    private Button mButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +75,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        findViewById(R.id.btn_handler_demo).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, HandlerActivity.class));
+            }
+        });
+
         // 第二种情况
 //        new Thread(new Runnable() {
 //            @Override
@@ -81,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
 //        SystemClock.sleep(5000);
 //        initView();
 
-
+//        startService(new Intent(this, ForegroundService.class));
     }
 
     private void testANR1() {

@@ -27,12 +27,12 @@ public class MemoryLeakActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_memory_leak);
-//        handlerMemoryLeak();
+        handlerMemoryLeak();
 //        singletonMemoryLeak();
 //        singletonNoMemoryLeak();
 //        collectionsMemoryLeak();
 //        threadMemoryLeak();
-        threadStopNoMemoryLeak();
+//        threadStopNoMemoryLeak();
 //        threadNoMemoryLeak();
     }
 

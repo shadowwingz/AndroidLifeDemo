@@ -33,6 +33,15 @@
         </activity>
         <activity android:name=".memoryleakdemo.MemoryLeakActivity">
         </activity>
+
+        <service
+            android:name=".anrdemo.ForegroundService"
+            android:enabled="true"
+            android:exported="true">
+        </service>
+
+        <activity android:name=".handlerdemo.HandlerActivity">
+        </activity>
     </application>
 
 </manifest>
