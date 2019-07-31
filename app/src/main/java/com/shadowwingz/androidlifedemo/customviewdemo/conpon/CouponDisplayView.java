@@ -1,4 +1,4 @@
-package com.shadowwingz.androidlifedemo.customviewdemo;
+package com.shadowwingz.androidlifedemo.customviewdemo.conpon;
 
 import android.content.Context;
 import android.content.res.TypedArray;

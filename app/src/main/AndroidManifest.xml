@@ -10,7 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".customviewdemo.CouponDisplayActivity">
+        <activity android:name=".customviewdemo.conpon.CouponDisplayActivity">
         </activity>
         <activity android:name=".customviewdemo.CustomViewActivity">
         </activity>

@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.shadowwingz.androidlifedemo.R;
+import com.shadowwingz.androidlifedemo.customviewdemo.conpon.CouponDisplayActivity;
 
 public class CustomViewActivity extends AppCompatActivity {
 

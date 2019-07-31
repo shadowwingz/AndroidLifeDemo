@@ -1,4 +1,4 @@
-package com.shadowwingz.androidlifedemo.customviewdemo;
+package com.shadowwingz.androidlifedemo.customviewdemo.conpon;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
