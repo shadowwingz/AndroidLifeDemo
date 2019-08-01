@@ -7,6 +7,7 @@ import android.view.View;
 
 import com.shadowwingz.androidlifedemo.R;
 import com.shadowwingz.androidlifedemo.customviewdemo.conpon.CouponDisplayActivity;
+import com.shadowwingz.androidlifedemo.customviewdemo.dashboard.DashBoardActivity;
 
 public class CustomViewActivity extends AppCompatActivity {
 
@@ -19,6 +20,13 @@ public class CustomViewActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(CustomViewActivity.this, CouponDisplayActivity.class));
+            }
+        });
+
+        findViewById(R.id.btn_dashboard).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(CustomViewActivity.this, DashBoardActivity.class));
             }
         });
     }

@@ -2,6 +2,8 @@ package com.shadowwingz.androidlifedemo.utils;
 
 import android.app.ActivityManager;
 import android.content.Context;
+import android.content.res.Resources;
+import android.util.TypedValue;
 
 import java.util.List;
 
@@ -28,5 +30,15 @@ public class Util {
             }
         }
         return "";
+    }
+
+    public static int dp2px(int dp) {
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp,
+                Resources.getSystem().getDisplayMetrics());
+    }
+
+    public static int sp2px(int sp) {
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, sp,
+                Resources.getSystem().getDisplayMetrics());
     }
 }
