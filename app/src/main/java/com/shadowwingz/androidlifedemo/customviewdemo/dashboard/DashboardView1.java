@@ -91,6 +91,7 @@ public class DashboardView1 extends View {
                 Math.max(getPaddingLeft(), getPaddingTop()),
                 Math.max(getPaddingRight(), getPaddingBottom())
         );
+        // 我们在 xml 中设置自定义 view 的 padding，要想让 padding 生效，需要调用 setPadding 方法
         setPadding(mPadding, mPadding, mPadding, mPadding);
 
         // 控件的宽度，这里要参考父容器的 widthMeasureSpec 来确定控件的宽度
@@ -216,6 +217,8 @@ public class DashboardView1 extends View {
         if (!TextUtils.isEmpty(mHeaderText)) {
             mPaint.setTextSize(sp2px(14));
             mPaint.setTextAlign(Paint.Align.CENTER);
+            // 在绘制文字之前，需要知道文字的高度，要测量待绘制文字的高度，可以使用 getTextBounds 方法，
+            // 把待绘制文字的高度存储在 mRectText 中，调用 mRectText.height() 即可获取高度
             mPaint.getTextBounds(mHeaderText, 0, mHeaderText.length(), mRectText);
             canvas.drawText(mHeaderText, mCenterX, mCenterY / 2f + mRectText.height(), mPaint);
         }
@@ -226,13 +229,17 @@ public class DashboardView1 extends View {
         float θ = mStartAngle + mSweepAngle * (mRealTimeValue - mMin) / (mMax - mMin); // 指针与水平线夹角
         int d = dp2px(5); // 指针由两个等腰三角形构成，d为共底边长的一半
         mPath.reset();
-        float[] p1 = getCoordinatePoint(d, θ - 90);
+        // 下
+        float[] p1 = getCoordinatePoint(d, θ + 270);
         mPath.moveTo(p1[0], p1[1]);
+        // 左
         float[] p2 = getCoordinatePoint(mPLRadius, θ);
         mPath.lineTo(p2[0], p2[1]);
+        // 上
         float[] p3 = getCoordinatePoint(d, θ + 90);
         mPath.lineTo(p3[0], p3[1]);
-        float[] p4 = getCoordinatePoint(mPSRadius, θ - 180);
+        // 右
+        float[] p4 = getCoordinatePoint(mPSRadius, θ + 180);
         mPath.lineTo(p4[0], p4[1]);
         mPath.close();
         canvas.drawPath(mPath, mPaint);
