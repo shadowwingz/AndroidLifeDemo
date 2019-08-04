@@ -21,7 +21,7 @@ import static com.shadowwingz.androidlifedemo.utils.Util.sp2px;
 /**
  * Created by shadowwingz on 2019-08-01 11:03
  */
-public class DashboardView1 extends View {
+public class DashboardView extends View {
 
     private int mRadius; // 扇形半径
     private int mStartAngle = 180; // 起始角度
@@ -34,8 +34,8 @@ public class DashboardView1 extends View {
     private int mRealTimeValue = mMin; // 实时读数
     private boolean isShowValue = true; // 是否显示实时读数
     private int mStrokeWidth; // 画笔宽度
-    private int mLength1; // 长刻度的相对圆弧的长度
-    private int mLength2; // 刻度读数顶部的相对圆弧的长度
+    private int mLength1; // 长刻度的长度
+    private int mLength2; // 刻度读数顶部到圆弧的长度
     private int mPLRadius; // 指针长半径
     private int mPSRadius; // 指针短半径
 
@@ -48,15 +48,15 @@ public class DashboardView1 extends View {
     private Rect mRectText;
     private String[] mTexts;
 
-    public DashboardView1(Context context) {
+    public DashboardView(Context context) {
         this(context, null);
     }
 
-    public DashboardView1(Context context, @Nullable AttributeSet attrs) {
+    public DashboardView(Context context, @Nullable AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public DashboardView1(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public DashboardView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
         init();
@@ -104,20 +104,14 @@ public class DashboardView1 extends View {
         } else {
             mPaint.getTextBounds("0", 0, 0, mRectText);
         }
-        // 由半径+指针短半径+实时读数文字高度确定的高度
-        int height1 = mRadius + mStrokeWidth * 2 + mPSRadius + mRectText.height() * 3;
-        // 由起始角度确定的高度
-        float[] point1 = getCoordinatePoint(mRadius, mStartAngle);
-        // 由结束角度确定的高度
-        float[] point2 = getCoordinatePoint(mRadius, mStartAngle + mSweepAngle);
-        // 取最大值
-        int measureHeight = (int) Math.max(
-                height1,
-                Math.max(point1[1] + mRadius + mStrokeWidth * 2, point2[1] + mRadius + mStrokeWidth * 2)
-        );
+        // 由半径 + 指针短半径 + 实时读数文字高度确定的高度
+        int measureHeight = mRadius + mStrokeWidth * 2 + mPSRadius + mRectText.height() * 3;
+        // 确定控件的大小
         setMeasuredDimension(measureWidth, measureHeight + getPaddingTop() + getPaddingBottom());
 
+        // 确定圆心坐标
         mCenterX = mCenterY = getMeasuredWidth() / 2f;
+        // 最外层的半圆所在的弧形
         mRectFArc.set(
                 getPaddingLeft() + mStrokeWidth,
                 getPaddingTop() + mStrokeWidth,
@@ -127,6 +121,7 @@ public class DashboardView1 extends View {
 
         mPaint.setTextSize(sp2px(10));
         mPaint.getTextBounds("0", 0, "0".length(), mRectText);
+        // 刻度 0 10 20 ... 所在的弧形
         mRectFInnerArc.set(
                 getPaddingLeft() + mLength2 + mRectText.height(),
                 getPaddingTop() + mLength2 + mRectText.height(),
@@ -153,12 +148,10 @@ public class DashboardView1 extends View {
          * 画长刻度
          * 画好起始角度的一条刻度后通过canvas绕着原点旋转来画剩下的长刻度
          */
-        double cos = Math.cos(Math.toRadians(mStartAngle - 180));
-        double sin = Math.sin(Math.toRadians(mStartAngle - 180));
-        float x0 = (float) (mPadding + mStrokeWidth + mRadius * (1 - cos));
-        float y0 = (float) (mPadding + mStrokeWidth + mRadius * (1 - sin));
-        float x1 = (float) (mPadding + mStrokeWidth + mRadius - (mRadius - mLength1) * cos);
-        float y1 = (float) (mPadding + mStrokeWidth + mRadius - (mRadius - mLength1) * sin);
+        float x0 = (float) (mPadding + mStrokeWidth);
+        float y0 = (float) (mPadding + mStrokeWidth + mRadius);
+        float x1 = (float) (mPadding + mStrokeWidth + mLength1);
+        float y1 = (float) (mPadding + mStrokeWidth + mRadius);
 
         canvas.save();
         canvas.drawLine(x0, y0, x1, y1, mPaint);
@@ -175,8 +168,8 @@ public class DashboardView1 extends View {
          */
         canvas.save();
         mPaint.setStrokeWidth(1);
-        float x2 = (float) (mPadding + mStrokeWidth + mRadius - (mRadius - mLength1 / 2f) * cos);
-        float y2 = (float) (mPadding + mStrokeWidth + mRadius - (mRadius - mLength1 / 2f) * sin);
+        float x2 = mPadding + mStrokeWidth + mLength1 / 2f;
+        float y2 = (float) (mPadding + mStrokeWidth + mRadius);
         canvas.drawLine(x0, y0, x2, y2, mPaint);
         angle = mSweepAngle * 1f / (mSection * mPortion);
         for (int i = 1; i < mSection * mPortion; i++) {
@@ -190,7 +183,7 @@ public class DashboardView1 extends View {
 
         /**
          * 画长刻度读数
-         * 添加一个圆弧path，文字沿着path绘制
+         * 添加一个圆弧 path，文字沿着 path 绘制
          */
         mPaint.setTextSize(sp2px(10));
         mPaint.setTextAlign(Paint.Align.LEFT);

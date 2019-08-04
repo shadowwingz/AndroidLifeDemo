@@ -10,19 +10,19 @@ import java.util.Random;
 
 public class DashBoardActivity extends AppCompatActivity {
 
-    private DashboardView1 mDashboardView1;
+    private DashboardView mDashboardView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dash_board);
 
-        mDashboardView1 = (DashboardView1) findViewById(R.id.dashboard_view_1);
+        mDashboardView = (DashboardView) findViewById(R.id.dashboard_view_1);
 
-        mDashboardView1.setOnClickListener(new View.OnClickListener() {
+        mDashboardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDashboardView1.setRealTimeValue(new Random().nextInt(100));
+                mDashboardView.setRealTimeValue(new Random().nextInt(100));
             }
         });
     }
