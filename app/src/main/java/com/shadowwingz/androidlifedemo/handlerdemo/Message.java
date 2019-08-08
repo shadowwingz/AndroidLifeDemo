@@ -5,7 +5,9 @@ package com.shadowwingz.androidlifedemo.handlerdemo;
  */
 public class Message {
 
+    // 消息内容
     int what;
 
+    // 负责处理消息的 Handler
     Handler target;
 }

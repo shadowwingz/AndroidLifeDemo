@@ -5,15 +5,16 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.shadowwingz.androidlifedemo.R;
+import com.shadowwingz.androidlifedemo.utils.LogUtil;
 
 public class HandlerActivity extends AppCompatActivity {
 
     private Handler mMHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
-            System.out.println("收到消息，msg.what = " + msg.what);
+            LogUtil.d("收到消息，msg.what = " + msg.what);
         }
-    };;
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

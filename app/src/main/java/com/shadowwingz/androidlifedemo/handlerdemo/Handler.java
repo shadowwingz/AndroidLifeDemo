@@ -8,8 +8,11 @@ public class Handler {
     private MessageQueue mQueue;
 
     public Handler() {
+        // 初始化 Looper
         Looper.prepare();
+        // 获取当前线程的 Looper
         Looper looper = Looper.myLooper();
+        // MessageQueue 和 Looper 关联
         mQueue = looper.sMessageQueue;
     }
 
@@ -24,7 +27,7 @@ public class Handler {
     public void sendMessage(Message msg) {
         MessageQueue queue = mQueue;
         if (queue != null) {
-            mQueue = queue;
+            // 将消息投递到消息队列
             queue.enqueueMessage(msg);
         }
     }
