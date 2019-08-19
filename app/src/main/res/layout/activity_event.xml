@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/fl_root"
     android:layout_width="match_parent"
@@ -9,29 +8,18 @@
     tools:context=".eventdemo.EventActivity">
 
     <com.shadowwingz.androidlifedemo.eventdemo.viewgroup.ViewGroupA
-        android:id="@+id/vg_a"
+        android:id="@+id/viewGroupA"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/darker_gray"
+        android:background="@android:color/holo_purple"
+        android:gravity="center"
         android:orientation="vertical">
 
         <com.shadowwingz.androidlifedemo.eventdemo.view.ViewA
+            android:id="@+id/viewA"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:background="@android:color/black"/>
-
-        <com.shadowwingz.androidlifedemo.eventdemo.viewgroup.ViewGroupB
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_marginTop="150dp"
-            android:background="@android:color/holo_green_dark"
-            android:gravity="center">
-
-            <com.shadowwingz.androidlifedemo.eventdemo.view.ViewB
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="@android:color/holo_blue_dark"/>
-        </com.shadowwingz.androidlifedemo.eventdemo.viewgroup.ViewGroupB>
+            android:background="@android:color/holo_blue_dark"/>
     </com.shadowwingz.androidlifedemo.eventdemo.viewgroup.ViewGroupA>
 
 </FrameLayout>

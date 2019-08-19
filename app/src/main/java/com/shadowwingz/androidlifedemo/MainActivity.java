@@ -9,6 +9,7 @@ import android.widget.Button;
 
 import com.shadowwingz.androidlifedemo.binderdemo.BookManagerActivity;
 import com.shadowwingz.androidlifedemo.customviewdemo.CustomViewActivity;
+import com.shadowwingz.androidlifedemo.eventdemo.EventActivity;
 import com.shadowwingz.androidlifedemo.handlerdemo.HandlerActivity;
 import com.shadowwingz.androidlifedemo.layoutinflaterdemo.LayoutInflaterActivity;
 import com.shadowwingz.androidlifedemo.layoutparamsdemo.LayoutParamsActivity;
@@ -87,6 +88,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, CustomViewActivity.class));
+            }
+        });
+
+        findViewById(R.id.btn_event).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, EventActivity.class));
             }
         });
 
