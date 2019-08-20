@@ -17,6 +17,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    useLibrary  'org.apache.http.legacy'
 }
 
 dependencies {
@@ -28,5 +29,7 @@ dependencies {
     compile deps.android.support.constraint
     debugCompile deps.leakcanary
     testCompile deps.junit
+    compile 'org.apache.httpcomponents:httpcore:4.4.1'
+    compile 'org.apache.httpcomponents:httpclient:4.5'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
 }

@@ -14,6 +14,11 @@ import com.shadowwingz.androidlifedemo.handlerdemo.HandlerActivity;
 import com.shadowwingz.androidlifedemo.layoutinflaterdemo.LayoutInflaterActivity;
 import com.shadowwingz.androidlifedemo.layoutparamsdemo.LayoutParamsActivity;
 import com.shadowwingz.androidlifedemo.memoryleakdemo.MemoryLeakActivity;
+import com.shadowwingz.androidlifedemo.simplenet.base.Request;
+import com.shadowwingz.androidlifedemo.simplenet.core.RequestQueue;
+import com.shadowwingz.androidlifedemo.simplenet.core.SimpleNet;
+import com.shadowwingz.androidlifedemo.simplenet.requests.StringRequest;
+import com.shadowwingz.androidlifedemo.utils.LogUtil;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -98,6 +103,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        findViewById(R.id.btn_simple_net).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                requestServer();
+            }
+        });
+
         // 第二种情况
 //        new Thread(new Runnable() {
 //            @Override
@@ -120,5 +132,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private synchronized void initView() {
+    }
+
+    private void requestServer() {
+        RequestQueue queue = SimpleNet.newRequestQueue();
+        StringRequest request = new StringRequest(Request.HttpMethod.GET, "https://www.baidu.com", new Request.RequestListener<String>() {
+            @Override
+            public void onComplete(int statusCode, String response, String errorMsg) {
+                LogUtil.d("response " + response);
+            }
+        });
+
+        queue.addRequest(request);
     }
 }
