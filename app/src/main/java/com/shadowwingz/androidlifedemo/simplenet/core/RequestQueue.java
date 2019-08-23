@@ -1,10 +1,9 @@
 package com.shadowwingz.androidlifedemo.simplenet.core;
 
-import android.util.Log;
-
 import com.shadowwingz.androidlifedemo.simplenet.base.Request;
 import com.shadowwingz.androidlifedemo.simplenet.httpstacks.HttpStack;
 import com.shadowwingz.androidlifedemo.simplenet.httpstacks.HttpStackFactory;
+import com.shadowwingz.androidlifedemo.utils.LogUtil;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.PriorityBlockingQueue;
@@ -86,7 +85,7 @@ public final class RequestQueue {
             request.setSerialNumber(this.generateSerialNumber());
             mRequestQueue.add(request);
         } else {
-            Log.d("", "### 请求队列中已经含有");
+            LogUtil.d("请求队列中已经含有");
         }
     }
 

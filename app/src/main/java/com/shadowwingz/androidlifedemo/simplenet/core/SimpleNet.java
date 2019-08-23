@@ -4,11 +4,11 @@ package com.shadowwingz.androidlifedemo.simplenet.core;
 import com.shadowwingz.androidlifedemo.simplenet.httpstacks.HttpStack;
 
 /**
- * SimpleNet入口
+ * SimpleNet 入口
  */
 public final class SimpleNet {
     /**
-     * 创建一个请求队列,NetworkExecutor数量为默认的数量
+     * 创建一个请求队列,NetworkExecutor 数量为默认的数量
      *
      * @return
      */
@@ -17,7 +17,7 @@ public final class SimpleNet {
     }
 
     /**
-     * 创建一个请求队列,NetworkExecutor数量为coreNums
+     * 创建一个请求队列,NetworkExecutor 数量为 coreNums
      *
      * @param coreNums
      * @return
@@ -27,7 +27,7 @@ public final class SimpleNet {
     }
 
     /**
-     * 创建一个请求队列,NetworkExecutor数量为coreNums
+     * 创建一个请求队列,NetworkExecutor 数量为 coreNums
      *
      * @param coreNums  线程数量
      * @param httpStack 网络执行者

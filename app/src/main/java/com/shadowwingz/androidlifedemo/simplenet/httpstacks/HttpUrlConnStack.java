@@ -28,7 +28,7 @@ import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLSocketFactory;
 
 /**
- * 使用HttpURLConnection执行网络请求的HttpStack
+ * 使用 HttpURLConnectio n执行网络请求的 HttpStack
  */
 public class HttpUrlConnStack implements HttpStack {
 
@@ -41,11 +41,11 @@ public class HttpUrlConnStack implements HttpStack {
     public Response performRequest(Request<?> request) {
         HttpURLConnection urlConnection = null;
         try {
-            // 构建HttpURLConnection
+            // 构建 HttpURLConnection
             urlConnection = createUrlConnection(request.getUrl());
-            // 设置headers
+            // 设置 headers
             setRequestHeaders(urlConnection, request);
-            // 设置Body参数
+            // 设置 Body 参数
             setRequestParams(urlConnection, request);
             // https 配置
             configHttps(request);
@@ -119,9 +119,9 @@ public class HttpUrlConnStack implements HttpStack {
         // 状态行数据
         StatusLine responseStatus = new BasicStatusLine(protocolVersion,
                 connection.getResponseCode(), connection.getResponseMessage());
-        // 构建response
+        // 构建 response
         Response response = new Response(responseStatus);
-        // 设置response数据
+        // 设置 response 数据
         response.setEntity(entityFromURLConnwction(connection));
         addHeadersToResponse(response, connection);
         return response;

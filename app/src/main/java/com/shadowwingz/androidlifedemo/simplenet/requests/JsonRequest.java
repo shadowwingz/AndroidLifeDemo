@@ -7,7 +7,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
- * 返回的数据类型为Json的请求, Json对应的对象类型为JSONObject
+ * 返回的数据类型为 Json 的请求, Json 对应的对象类型为 JSONObject
  */
 public class JsonRequest extends Request<JSONObject> {
 
@@ -16,9 +16,8 @@ public class JsonRequest extends Request<JSONObject> {
         super(url, method, listener);
     }
 
-
     /**
-     * 将Response的结果转换为JSONObject
+     * 将 Response 的结果转换为JSONObject
      */
     @Override
     public JSONObject parseResponse(Response response) {

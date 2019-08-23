@@ -9,7 +9,7 @@ import com.shadowwingz.androidlifedemo.simplenet.base.Response;
 import java.util.concurrent.Executor;
 
 /**
- * 请求结果投递类,将请求结果投递给UI线程
+ * 请求结果投递类,将请求结果投递给 UI 线程
  */
 class ResponseDelivery implements Executor {
 
@@ -26,7 +26,6 @@ class ResponseDelivery implements Executor {
      */
     public void deliveryResponse(final Request<?> request, final Response response) {
         Runnable respRunnable = new Runnable() {
-
             @Override
             public void run() {
                 request.deliveryResponse(response);
