@@ -3,7 +3,7 @@ package com.shadowwingz.androidlifedemo.simplenet.httpstacks;
 import android.os.Build;
 
 /**
- * 根据api版本选择HttpClient或者HttpURLConnection
+ * 根据 api 版本选择 HttpClient 或者 HttpURLConnection
  */
 public final class HttpStackFactory {
 

@@ -11,7 +11,7 @@ public interface HttpStack {
      * 执行Http请求
      *
      * @param request 待执行的请求
-     * @return
+     * @return 响应结果
      */
     Response performRequest(Request<?> request);
 }

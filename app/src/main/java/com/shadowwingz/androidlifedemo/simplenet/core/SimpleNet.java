@@ -8,19 +8,19 @@ import com.shadowwingz.androidlifedemo.simplenet.httpstacks.HttpStack;
  */
 public final class SimpleNet {
     /**
-     * 创建一个请求队列,NetworkExecutor 数量为默认的数量
+     * 创建一个默认数量的请求队列 NetworkExecutor
      *
-     * @return
+     * @return RequestQueue 对象
      */
     public static RequestQueue newRequestQueue() {
         return newRequestQueue(RequestQueue.DEFAULT_CORE_NUMS);
     }
 
     /**
-     * 创建一个请求队列,NetworkExecutor 数量为 coreNums
+     * 创建一个请求队列
      *
-     * @param coreNums
-     * @return
+     * @param coreNums 请求数量
+     * @return RequestQueue 对象
      */
     public static RequestQueue newRequestQueue(int coreNums) {
         return newRequestQueue(coreNums, null);

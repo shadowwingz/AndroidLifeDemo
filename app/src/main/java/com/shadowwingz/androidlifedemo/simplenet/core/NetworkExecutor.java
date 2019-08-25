@@ -7,6 +7,7 @@ import com.shadowwingz.androidlifedemo.simplenet.base.Response;
 import com.shadowwingz.androidlifedemo.simplenet.cache.Cache;
 import com.shadowwingz.androidlifedemo.simplenet.cache.LruMemCache;
 import com.shadowwingz.androidlifedemo.simplenet.httpstacks.HttpStack;
+import com.shadowwingz.androidlifedemo.utils.LogUtil;
 
 import java.util.concurrent.BlockingQueue;
 
@@ -46,18 +47,19 @@ final class NetworkExecutor extends Thread {
         try {
             while (!isStop) {
                 final Request<?> request = mRequestQueue.take();
+                // 如果请求被取消，就跳过这个请求，继续执行下一个请求
                 if (request.isCanceled()) {
                     Log.d("### ", "### 取消执行了");
                     continue;
                 }
-                Response response = null;
+                Response response;
                 if (isUseCache(request)) {
                     // 从缓存中取
                     response = mReqCache.get(request.getUrl());
                 } else {
                     // 从网络上获取数据
                     response = mHttpStack.performRequest(request);
-                    // 如果该请求需要缓存,那么请求成功则缓存到mResponseCache中
+                    // 如果该请求需要缓存,那么请求成功则缓存到 mResponseCache 中
                     if (request.shouldCache() && isSuccess(response)) {
                         mReqCache.put(request.getUrl(), response);
                     }
@@ -67,7 +69,7 @@ final class NetworkExecutor extends Thread {
                 mResponseDelivery.deliveryResponse(request, response);
             }
         } catch (InterruptedException e) {
-            Log.i("", "### 请求分发器退出");
+            LogUtil.d("请求分发器退出");
         }
 
     }

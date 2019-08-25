@@ -89,7 +89,7 @@ public class HttpUrlConnStack implements HttpStack {
         }
     }
 
-    protected void setRequestParams(HttpURLConnection connection, Request<?> request)
+    private void setRequestParams(HttpURLConnection connection, Request<?> request)
             throws ProtocolException, IOException {
         Request.HttpMethod method = request.getHttpMethod();
         connection.setRequestMethod(method.toString());
@@ -128,7 +128,7 @@ public class HttpUrlConnStack implements HttpStack {
     }
 
     /**
-     * 执行HTTP请求之后获取到其数据流,即返回请求结果的流
+     * 执行 HTTP 请求之后获取到其数据流,即返回请求结果的流
      *
      * @param connection
      * @return

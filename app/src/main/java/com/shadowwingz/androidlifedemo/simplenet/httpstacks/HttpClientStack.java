@@ -91,7 +91,7 @@ public class HttpClientStack implements HttpStack {
      * @return
      */
     static HttpUriRequest createHttpRequest(Request<?> request) {
-        HttpUriRequest httpUriRequest = null;
+        HttpUriRequest httpUriRequest;
         switch (request.getHttpMethod()) {
             case GET:
                 httpUriRequest = new HttpGet(request.getUrl());

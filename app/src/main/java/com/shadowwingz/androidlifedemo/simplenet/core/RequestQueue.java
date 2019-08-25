@@ -65,7 +65,7 @@ public final class RequestQueue {
     }
 
     /**
-     * 停止NetworkExecutor
+     * 停止 NetworkExecutor
      */
     public void stop() {
         if (mDispatchers != null && mDispatchers.length > 0) {
@@ -78,21 +78,29 @@ public final class RequestQueue {
     /**
      * 不能重复添加请求
      *
-     * @param request
+     * @param request 要添加的请求
      */
     public void addRequest(Request<?> request) {
         if (!mRequestQueue.contains(request)) {
             request.setSerialNumber(this.generateSerialNumber());
             mRequestQueue.add(request);
         } else {
-            LogUtil.d("请求队列中已经含有");
+            LogUtil.d("请求队列中已经含有这个请求");
         }
     }
 
+    /**
+     * 清空请求队列
+     */
     public void clear() {
         mRequestQueue.clear();
     }
 
+    /**
+     * 获取请求队列中的所有请求
+     *
+     * @return 请求队列中的所有请求
+     */
     public BlockingQueue<Request<?>> getAllRequests() {
         return mRequestQueue;
     }
