@@ -1,6 +1,5 @@
 package com.shadowwingz.androidlifedemo.simplenet.core;
 
-
 import com.shadowwingz.androidlifedemo.simplenet.httpstacks.HttpStack;
 
 /**

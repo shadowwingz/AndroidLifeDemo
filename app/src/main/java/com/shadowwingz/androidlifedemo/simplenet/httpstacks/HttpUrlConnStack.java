@@ -28,7 +28,7 @@ import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLSocketFactory;
 
 /**
- * 使用 HttpURLConnectio n执行网络请求的 HttpStack
+ * 使用 HttpURLConnection 执行网络请求的 HttpStack
  */
 public class HttpUrlConnStack implements HttpStack {
 

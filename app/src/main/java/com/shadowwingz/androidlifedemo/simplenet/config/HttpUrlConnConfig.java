@@ -4,7 +4,7 @@ import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLSocketFactory;
 
 /**
- * 这是针对于使用HttpUrlStack执行请求时为https请求设置的SSLSocketFactory和HostnameVerifier的配置类,参考
+ * 这是针对于使用 HttpUrlStack 执行请求时为 https 请求设置的 SSLSocketFactory 和 HostnameVerifier 的配置类,参考
  * http://blog.csdn.net/xyz_lmn/article/details/8027334,http://www.cnblogs.com/
  * vus520/archive/2012/09/07/2674725.html,
  */

@@ -12,7 +12,7 @@ import java.util.Map;
  */
 public abstract class Request<T> implements Comparable<Request<T>> {
 
-    public static enum HttpMethod {
+    public enum HttpMethod {
         GET("GET"),
         POST("POST"),
         PUT("PUT"),
@@ -33,7 +33,7 @@ public abstract class Request<T> implements Comparable<Request<T>> {
     /**
      * 优先级枚举
      */
-    public static enum Priority {
+    public enum Priority {
         LOW,
         NORMAL,
         HIGH,

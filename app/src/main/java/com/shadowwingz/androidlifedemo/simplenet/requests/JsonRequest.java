@@ -17,7 +17,7 @@ public class JsonRequest extends Request<JSONObject> {
     }
 
     /**
-     * 将 Response 的结果转换为JSONObject
+     * 将 Response 的结果转换为 JSONObject
      */
     @Override
     public JSONObject parseResponse(Response response) {

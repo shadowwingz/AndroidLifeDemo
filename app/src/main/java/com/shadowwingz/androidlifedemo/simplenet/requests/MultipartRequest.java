@@ -1,16 +1,16 @@
 package com.shadowwingz.androidlifedemo.simplenet.requests;
 
-import android.util.Log;
-
 import com.shadowwingz.androidlifedemo.simplenet.base.Request;
 import com.shadowwingz.androidlifedemo.simplenet.base.Response;
 import com.shadowwingz.androidlifedemo.simplenet.entity.MultipartEntity;
+import com.shadowwingz.androidlifedemo.utils.LogUtil;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 /**
- * Multipart请求 ( 只能为POST请求 ),该请求可以搭载多种类型参数,比如文本、文件等,但是文件仅限于小文件,否则会出现OOM异常.
+ * Multipart请求 (只能为POST请求),该请求可以搭载多种类型参数,比如文本、文件等,
+ * 但是文件仅限于小文件,否则会出现 OOM 异常.
  */
 public class MultipartRequest extends Request<String> {
 
@@ -39,7 +39,7 @@ public class MultipartRequest extends Request<String> {
             // 将MultipartEntity中的参数写入到bos中
             mMultiPartEntity.writeTo(bos);
         } catch (IOException e) {
-            Log.e("", "IOException writing to ByteArrayOutputStream");
+            LogUtil.d("IOException writing to ByteArrayOutputStream");
         }
         return bos.toByteArray();
     }
@@ -49,7 +49,6 @@ public class MultipartRequest extends Request<String> {
         if (response != null && response.getRawData() != null) {
             return new String(response.getRawData());
         }
-
         return "";
     }
 
