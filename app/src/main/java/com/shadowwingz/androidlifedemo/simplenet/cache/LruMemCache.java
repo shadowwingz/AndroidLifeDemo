@@ -1,6 +1,6 @@
 package com.shadowwingz.androidlifedemo.simplenet.cache;
 
-import android.support.v4.util.LruCache;
+import android.util.LruCache;
 
 import com.shadowwingz.androidlifedemo.simplenet.base.Response;
 

@@ -1,8 +1,9 @@
 package com.shadowwingz.androidlifedemo.eventdemo;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.shadowwingz.androidlifedemo.R;
 import com.shadowwingz.androidlifedemo.utils.LogUtil;

@@ -2,8 +2,9 @@ package com.shadowwingz.androidlifedemo.customviewdemo;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.shadowwingz.androidlifedemo.R;
 import com.shadowwingz.androidlifedemo.customviewdemo.conpon.CouponDisplayActivity;

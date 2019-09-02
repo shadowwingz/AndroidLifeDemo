@@ -7,7 +7,8 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.IBinder;
 import android.os.SystemClock;
-import android.support.annotation.RequiresApi;
+
+import androidx.annotation.RequiresApi;
 
 import com.shadowwingz.androidlifedemo.MainActivity;
 import com.shadowwingz.androidlifedemo.R;

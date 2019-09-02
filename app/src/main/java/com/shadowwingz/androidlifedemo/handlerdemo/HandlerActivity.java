@@ -1,8 +1,9 @@
 package com.shadowwingz.androidlifedemo.handlerdemo;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.shadowwingz.androidlifedemo.R;
 import com.shadowwingz.androidlifedemo.utils.LogUtil;
