@@ -20,6 +20,7 @@ import com.shadowwingz.androidlifedemo.simplenet.core.RequestQueue;
 import com.shadowwingz.androidlifedemo.simplenet.core.SimpleNet;
 import com.shadowwingz.androidlifedemo.simplenet.requests.StringRequest;
 import com.shadowwingz.androidlifedemo.utils.LogUtil;
+import com.shadowwingz.androidlifedemo.systracedemo.WordListMainActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -108,6 +109,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 requestServer();
+            }
+        });
+
+        findViewById(R.id.btn_systrace).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, WordListMainActivity.class));
             }
         });
 

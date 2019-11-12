@@ -32,15 +32,17 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile(deps.android.support.test.espresso, {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation(deps.android.support.test.espresso, {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile deps.android.support.appcompat
-    compile deps.android.support.constraint
-    debugCompile deps.leakcanary
-    testCompile deps.junit
-    compile 'org.apache.httpcomponents:httpcore:4.4.1'
-    compile 'org.apache.httpcomponents:httpclient:4.5'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation deps.android.support.appcompat
+    implementation deps.android.support.constraint
+    implementation deps.android.support.recyclerview
+    implementation deps.android.support.material
+    debugImplementation deps.leakcanary
+    testImplementation deps.junit
+    implementation 'org.apache.httpcomponents:httpcore:4.4.1'
+    implementation 'org.apache.httpcomponents:httpclient:4.5'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
 }

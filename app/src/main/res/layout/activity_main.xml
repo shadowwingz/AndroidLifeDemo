@@ -81,6 +81,13 @@
             android:layout_height="wrap_content"
             android:text="手写网络请求框架"
             android:textAllCaps="false"/>
+
+        <Button
+            android:id="@+id/btn_systrace"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Systrace 使用"
+            android:textAllCaps="false"/>
     </LinearLayout>
 
 </ScrollView>

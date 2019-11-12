@@ -52,6 +52,8 @@
 
         <activity android:name=".handlerdemo.HandlerActivity">
         </activity>
+        <activity android:name=".systracedemo.WordListMainActivity" />
+        <activity android:name=".systracedemo.EditWordActivity" />
     </application>
 
 </manifest>
