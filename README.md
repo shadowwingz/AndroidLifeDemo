@@ -6,3 +6,20 @@
 | [LayoutInflater Demo](https://github.com/shadowwingz/AndroidLifeDemo/tree/master/app/src/main/java/com/shadowwingz/androidlifedemo/layoutinflaterdemo) | [LayoutInflater 源码解析](https://github.com/shadowwingz/AndroidLife/blob/master/ui/view/LayoutInflater%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/LayoutInflater%20%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90.md) |
 | [LayoutParams Demo](https://github.com/shadowwingz/AndroidLifeDemo/tree/master/app/src/main/java/com/shadowwingz/androidlifedemo/layoutparamsdemo) | [LayoutParams解析](https://github.com/shadowwingz/AndroidLife/blob/master/ui/view/LayoutParams%E8%A7%A3%E6%9E%90/LayoutParams%E8%A7%A3%E6%9E%90.md) |
 | [自定义 View 优惠卷](https://github.com/shadowwingz/AndroidLifeDemo/tree/master/app/src/main/java/com/shadowwingz/androidlifedemo/customviewdemo/conpon) | [自定义 View 优惠券](https://github.com/shadowwingz/AndroidLife/blob/master/%E8%87%AA%E5%AE%9A%E4%B9%89%20View/coupon_display_view/coupon_display_view.md) |
+
+License
+-------
+
+    Copyright (c) 2019-present. shadowwingz
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
